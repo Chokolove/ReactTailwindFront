@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'krona': ['"Krona One"', 'serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
