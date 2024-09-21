@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-import HeroBanner from "@/components/HeroBanner";
+import HeroSlider from "@/components/HeroSlider";
 
 export const metadata: Metadata = {
   title: "Front React",
@@ -19,8 +19,8 @@ export default function RootLayout({
         className="antialiased"
       >
         <main>
-          <HeroBanner />
-          <div className="p-4 max-w-7xl mx-auto min-h-screen">
+          <HeroSlider />
+          <div className="min-h-screen">
             <NavBar />
             {children}
           </div>

@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'krona': ['"Krona One"', 'serif'],
+        'krona': ['"Krona One"', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        lightGray: "#f9f9f9",
       },
     },
   },
