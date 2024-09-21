@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         'krona': ['"Krona One"', 'sans-serif'],
+        'roboto': ['"Roboto"', 'sans-serif'],
       },
       colors: {
         background: "var(--background)",
