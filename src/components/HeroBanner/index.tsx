@@ -4,10 +4,12 @@ import { useState } from 'react';
 import slide1 from "@/assets/images/home/slide1.jpg";
 import slide2 from "@/assets/images/home/slide2.jpg";
 import slide3 from "@/assets/images/home/slide3.jpg";
+import { usePathname } from 'next/navigation';
 
 const HeroBanner = () => {
   const images = [slide1, slide2, slide3];
   const [currentSlide, setCurrentSlide] = useState(0);
+  const pathname = usePathname();
 
   const handleNext = () => {
     setCurrentSlide((currentSlide + 1) % images.length);
@@ -18,7 +20,7 @@ const HeroBanner = () => {
   };
 
   return (
-    <div className='w-full h-screen relative overflow-hidden'>
+    <div className={`w-full ${pathname === "/" ? "h-screen" : "h-72"} relative overflow-hidden`}>
       {/* Image Slider */}
       <div
         className='flex transition-transform duration-700 ease-in-out'
