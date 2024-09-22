@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Container from "../Container"
+import Button from "../Button"
 
 interface Props {
   title?: string
@@ -13,7 +14,7 @@ function HeroWithCTA({ title, body }: Props) {
           <h1 className="text-7xl text-gray-700 mb-4 font-krona uppercase font-normal">{title}</h1>
           <p className="text-center text-gray-500 text-lg mb-12">{body}</p>
           <Link href="/about">
-            <button className="bg-gray-700 text-white py-2 px-4 rounded-sm">About Us</button>
+            <Button text="About Us" />
           </Link>
       </Container>
     </div>
