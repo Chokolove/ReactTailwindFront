@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import DishCard from "@/components/DishCard";
 import HeroWithCTA from "@/components/HeroWithCTA";
+import EmailSubscription from "@/components/EmailSubscription";
 
 import img1 from "@/assets/images/home/img1.jpg";
 import img2 from "@/assets/images/home/img2.jpg";
@@ -46,6 +47,7 @@ export default function Page() {
           <DishCard key={index} {...card} />
         ))}
       </Container>
+      <EmailSubscription />
     </div>
   )
 }
