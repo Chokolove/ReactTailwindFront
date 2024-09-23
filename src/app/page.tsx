@@ -7,6 +7,7 @@ import img1 from "@/assets/images/home/img1.jpg";
 import img2 from "@/assets/images/home/img2.jpg";
 import img3 from "@/assets/images/home/img3.jpg";
 import { StaticImageData } from "next/image";
+import FeatureSection from "@/components/FeatureSection";
 
 const HeroWithCTATitle = "Delight in Every Bite!"
 const HeroWithCTABody = "Discover the perfect blend of fresh ingredients and authentic flavors. Whether you're here for a quick bite or a hearty meal, every dish is crafted to satisfy your cravings and leave you wanting more."
@@ -48,6 +49,7 @@ export default function Page() {
         ))}
       </Container>
       <EmailSubscription />
+      <FeatureSection />
     </div>
   )
 }
