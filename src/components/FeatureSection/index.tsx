@@ -10,12 +10,14 @@ const cards = [
     body: "Discover the dishes our customers can’t get enough of! From mouthwatering grilled meals to refreshing shakes, these are the top picks that keep them coming back.",
     buttonText: "Explore Popular Dishes",
     image: img4,
+    link: "/dishes",
   },
   {
     title: "Exclusive Deals",
     body: "Enjoy amazing discounts on some of our best dishes! These limited-time offers make it easier to indulge in your favorite meals without breaking the bank.",
     buttonText: "Grab the Deal",
     image: img5,
+    link: "/dishes",
   },
 ]
 

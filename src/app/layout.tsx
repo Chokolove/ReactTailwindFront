@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "remixicon/fonts/remixicon.css";
 import NavBar from "@/components/NavBar";
 import HeroSlider from "@/components/HeroSlider";
 

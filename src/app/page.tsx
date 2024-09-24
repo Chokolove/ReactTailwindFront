@@ -5,6 +5,7 @@ import HeroWithCTA from "@/components/HeroWithCTA";
 import FeatureSection from "@/components/FeatureSection";
 import HighlightBanner from "@/components/HighlightBanner";
 import EmailSubscription from "@/components/EmailSubscription";
+import FooterContact from "@/components/FooterContact";
 
 import img1 from "@/assets/images/home/img1.jpg";
 import img2 from "@/assets/images/home/img2.jpg";
@@ -61,6 +62,7 @@ export default function Page() {
         bodyClassName="text-white max-w-3xl"
         buttonClassName="bg-transparent text-white border border-white uppercase font-bold"
       />
+      <FooterContact />
     </div>
   )
 }

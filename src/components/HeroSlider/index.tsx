@@ -40,7 +40,7 @@ const HeroBanner = () => {
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center z-20 text-white">
-        <h1 className="text-7xl font-krona font-bold text-center">CARBON Y MAR</h1>
+        <h1 className="text-7xl font-krona font-bold text-center uppercase">Ocean & Flame</h1>
 
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {images.map((_, index) => (
