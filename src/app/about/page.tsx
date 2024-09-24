@@ -1,5 +1,6 @@
 import HeroWithImg from "@/components/HeroWithImg";
 import CorePrinciples from "@/components/CorePrinciples";
+import MemberShowcase from "@/components/MemberShowcase";
 
 import img1 from "@/assets/images/nosotros/img1.jpg";
 
@@ -14,6 +15,7 @@ export default function Page() {
     <div className="flex flex-col justify-center items-center mb-10">
       <HeroWithImg title={"A Word from Us"} subtitle="Where Grills Meet the Ocean" message={HeroWithImgBody} image={img1} />
       <CorePrinciples />
+      <MemberShowcase />
     </div>
   )
 }
