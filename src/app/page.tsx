@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import DishCard from "@/components/DishCard";
+import InfoCard from "@/components/InfoCard";
 import Container from "@/components/Container";
 import HeroWithCTA from "@/components/HeroWithCTA";
 import FeatureSection from "@/components/FeatureSection";
@@ -49,7 +49,9 @@ export default function Page() {
       <HeroWithCTA title={HeroWithCTATitle} body={HeroWithCTABody} />
       <Container className="flex gap-9 w-full justify-center items-center">
         {dishcards.map((card, index) => (
-          <DishCard key={index} {...card} />
+          <InfoCard key={index} {...card} >
+            <p className="text-gray-500 max-h-24 overflow-auto">{card.body}</p>
+          </InfoCard>
         ))}
       </Container>
       <EmailSubscription />

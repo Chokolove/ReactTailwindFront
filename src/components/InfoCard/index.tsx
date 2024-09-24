@@ -6,20 +6,19 @@ interface Props {
   title: string
   image?: StaticImageData
   subtitle?: string
-  body: string
   topBorderColor?: string
   link?: string
+  children?: React.ReactNode
 }
 
-function DishCard({ title, image, subtitle, body, topBorderColor, link }: Props) {
+function InfoCard({ title, image, subtitle, topBorderColor, link, children }: Props) {
   return (
-    <div className="border-t-8 flex flex-col gap-4 py-6 max-w-80" style={{ borderColor: topBorderColor }}>
-      <h2 className="text-4xl text-gray-700">{title}</h2>
+    <div className="border-t-8 flex flex-col gap-4 py-6 w-80" style={{ borderColor: topBorderColor }}>
+      <h2 className="text-4xl text-gray-700 max-h-80">{title}</h2>
       {image && <img src={image?.src ?? ""} alt={title} width={image?.width} height={image?.height} style={{ maxWidth: "320px", maxHeight: "215px" }} />}
       {subtitle && <h3>{subtitle}</h3>}
-      <div className="max-h-24 overflow-auto">
-
-        <p className="text-gray-500">{body}</p>
+      <div className="overflow-auto">
+        {children}
       </div>
       {
         link &&
@@ -30,4 +29,4 @@ function DishCard({ title, image, subtitle, body, topBorderColor, link }: Props)
     </div>
   )
 }
-export default DishCard;
+export default InfoCard;
