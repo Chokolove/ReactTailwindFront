@@ -11,6 +11,8 @@ import img1 from "@/assets/images/home/img1.jpg";
 import img2 from "@/assets/images/home/img2.jpg";
 import img3 from "@/assets/images/home/img3.jpg";
 import bg from "@/assets/images/home/bg.jpg"
+import Button from "@/components/Button";
+import Link from "next/link";
 
 
 const HeroWithCTATitle = "Delight in Every Bite!"
@@ -56,14 +58,15 @@ export default function Page() {
       </Container>
       <EmailSubscription />
       <FeatureSection />
-      <HighlightBanner 
-        title="Chef's Special Creations" 
-        body="Indulge in our most celebrated plates, crafted with care and bursting with flavor. From traditional favorites to unique gourmet dishes, these meals are guaranteed to impress."
-        link="/dishes"
+      <HighlightBanner
         image={bg}
-        bodyClassName="text-white max-w-3xl"
-        buttonClassName="bg-transparent text-white border border-white uppercase font-bold"
-      />
+      >
+        <h1 className="text-6xl font-krona font-bold text-center">Chef`s Special Creations</h1>
+        <p className="text-center text-white max-w-3xl">Indulge in our most celebrated plates, crafted with care and bursting with flavor. From traditional favorites to unique gourmet dishes, these meals are guaranteed to impress.</p>
+        <Link href="/dishes">
+          <Button className="bg-transparent text-white border border-white uppercase font-bold" text="Learn More" />
+        </Link>
+      </HighlightBanner>
       <FooterContact />
     </div>
   )
