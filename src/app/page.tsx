@@ -1,13 +1,16 @@
-import Container from "@/components/Container";
+import { StaticImageData } from "next/image";
 import DishCard from "@/components/DishCard";
+import Container from "@/components/Container";
 import HeroWithCTA from "@/components/HeroWithCTA";
+import FeatureSection from "@/components/FeatureSection";
+import HighlightBanner from "@/components/HighlightBanner";
 import EmailSubscription from "@/components/EmailSubscription";
 
 import img1 from "@/assets/images/home/img1.jpg";
 import img2 from "@/assets/images/home/img2.jpg";
 import img3 from "@/assets/images/home/img3.jpg";
-import { StaticImageData } from "next/image";
-import FeatureSection from "@/components/FeatureSection";
+import bg from "@/assets/images/home/bg.jpg"
+
 
 const HeroWithCTATitle = "Delight in Every Bite!"
 const HeroWithCTABody = "Discover the perfect blend of fresh ingredients and authentic flavors. Whether you're here for a quick bite or a hearty meal, every dish is crafted to satisfy your cravings and leave you wanting more."
@@ -41,7 +44,7 @@ const dishcards: { title: string, image?: StaticImageData, subtitle?: string, bo
 
 export default function Page() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mb-10">
       <HeroWithCTA title={HeroWithCTATitle} body={HeroWithCTABody} />
       <Container className="flex gap-9 w-full justify-center items-center">
         {dishcards.map((card, index) => (
@@ -50,6 +53,14 @@ export default function Page() {
       </Container>
       <EmailSubscription />
       <FeatureSection />
+      <HighlightBanner 
+        title="Chef's Special Creations" 
+        body="Indulge in our most celebrated plates, crafted with care and bursting with flavor. From traditional favorites to unique gourmet dishes, these meals are guaranteed to impress."
+        link="/dishes"
+        image={bg}
+        bodyClassName="text-white max-w-3xl"
+        buttonClassName="bg-transparent text-white border border-white uppercase font-bold"
+      />
     </div>
   )
 }

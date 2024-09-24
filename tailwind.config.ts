@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'krona': ['"Krona One"', 'sans-serif'],
-        'roboto': ['"Roboto"', 'sans-serif'],
+        "krona": ["\"Krona One\"", "sans-serif"],
+        "roboto": ["\"Roboto\"", "sans-serif"],
       },
       colors: {
         background: "var(--background)",
