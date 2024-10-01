@@ -18,7 +18,6 @@ function EmailSubscription() {
     e?.preventDefault()
     console.log(data)
     console.log(errors);
-    
   }
   return (
     <div className="w-full bg-lightGray">
