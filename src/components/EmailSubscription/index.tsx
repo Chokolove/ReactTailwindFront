@@ -12,23 +12,34 @@ function EmailSubscription() {
   const {
     register,
     handleSubmit,
+    formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = (data, e) => {
     e?.preventDefault()
     console.log(data)
+    console.log(errors);
+    
   }
   return (
     <div className="w-full bg-lightGray">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container className="flex gap-9 justify-center items-center">
           <h2 className="text-2xl text-gray-700">Stay Updated with Our Latest Offers</h2>
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
+          <input
             className="border border-gray-200 py-2 px-4 rounded-sm w-full max-w-80"
-            {...register("email")}/>
-          <Button text="Subscribe Now" className="w-80" type="submit"/>
+            placeholder="Enter your email"
+            type="email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Please enter a valid email address",
+              },
+            })}
+          />
+          <Button text="Subscribe Now" className="w-80" type="submit" />
         </Container>
+        {errors.email && <p>{errors.email.message}</p>}
       </form>
     </div>
   )

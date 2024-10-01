@@ -5,13 +5,14 @@ interface Props {
   onClick?: () => void;
   type?: "submit" | "button" | "reset" | undefined;
 }
-function Button({ text, className, style, onClick, type="button" }: Props) {
+function Button({ text, className, style, onClick, type="button", ...rest }: Props & React.ComponentPropsWithoutRef<"button">) {
   return (
     <button
       className={`bg-gray-700 text-white py-2 px-4 rounded-sm hover:opacity-80 transition duration-300 ease-in-out ${className}`}
       style={style}
       type={type}
-      onClick={onClick}>
+      onClick={onClick}
+      {...rest}>
       {text}
     </button>
   )

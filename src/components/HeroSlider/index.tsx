@@ -55,15 +55,15 @@ const HeroBanner = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-20"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20"
         >
-          ❮
+          <i className="ri-arrow-left-s-line bg-black bg-opacity-50 text-white p-2 rounded-full hover:opacity-80 transition duration-300 ease-in-out" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-20"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20"
         >
-          ❯
+          <i className="ri-arrow-right-s-line bg-black bg-opacity-50 text-white p-2 rounded-full hover:opacity-80 transition duration-300 ease-in-out" />
         </button>
       </div>
     </div>
