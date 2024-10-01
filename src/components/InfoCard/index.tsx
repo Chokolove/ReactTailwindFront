@@ -13,7 +13,7 @@ interface Props {
 
 function InfoCard({ title, image, subtitle, topBorderColor, link, children }: Props) {
   return (
-    <div className="border-t-8 flex flex-col gap-4 py-6 w-80" style={{ borderColor: topBorderColor }}>
+    <div className="flex flex-col gap-4 py-6 w-80" style={{ borderTop: `8px solid ${topBorderColor}` }}>
       <h2 className="text-4xl text-gray-700 max-h-80">{title}</h2>
       {image && <img src={image?.src ?? ""} alt={title} width={image?.width} height={image?.height} style={{ maxWidth: "320px", maxHeight: "215px" }} />}
       {subtitle && <h3>{subtitle}</h3>}

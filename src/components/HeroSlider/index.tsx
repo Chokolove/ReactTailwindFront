@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import slide1 from "@/assets/images/home/slide1.jpg";
 import slide2 from "@/assets/images/home/slide2.jpg";
 import slide3 from "@/assets/images/home/slide3.jpg";
@@ -8,23 +8,30 @@ import { usePathname } from "next/navigation";
 
 const HeroBanner = () => {
   const images = [slide1, slide2, slide3];
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const pathname = usePathname();
 
   const handleNext = () => {
-    setCurrentSlide((currentSlide + 1) % images.length);
+    setCurrentSlideIndex((prevSlideIndex) => (prevSlideIndex + 1) % images.length);
   };
 
   const handlePrev = () => {
-    setCurrentSlide((currentSlide - 1 + images.length) % images.length);
+    setCurrentSlideIndex((currentSlideIndex - 1 + images.length) % images.length);
   };
+
+  const slideIntervalTime = 5000
+
+  useEffect(() => {
+    const autoSlide = setInterval(() => {handleNext()}, slideIntervalTime);
+    return () => clearInterval(autoSlide);
+  }, []);
 
   return (
     <div className={`w-full ${pathname === "/" ? "h-screen" : "h-72"} relative overflow-hidden`}>
       {/* Image Slider */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        style={{ transform: `translateX(-${currentSlideIndex * 100}%)` }}
       >
         {images.map((img, index) => (
           <div
@@ -46,8 +53,8 @@ const HeroBanner = () => {
           {images.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-4 h-4 rounded-full ${currentSlide === index ? "bg-white" : "bg-gray-400"}`}
+              onClick={() => setCurrentSlideIndex(index)}
+              className={`w-4 h-4 rounded-full ${currentSlideIndex === index ? "bg-white" : "bg-gray-400"}`}
             ></button>
           ))}
         </div>
